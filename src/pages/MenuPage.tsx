@@ -15,6 +15,7 @@ import {
   Calculator,
   PlayCircle,
   ClipboardList,
+  Presentation,
 } from "lucide-react";
 import PageNavigation from "@/components/PageNavigation";
 import { playPopSound } from "@/hooks/useAudio";
@@ -22,6 +23,9 @@ import { playPopSound } from "@/hooks/useAudio";
 const menuItems = [
   { label: "PETUNJUK", icon: Info, path: "/petunjuk", desc: "Panduan penggunaan" },
   { label: "PERMAINAN", icon: Gamepad2, path: "/quiz-gamez", desc: "Game quiz berdasarkan materi" },
+  { label: "GAME QUIZ KELAS 7", icon: Presentation, path: "/quiz-gamez?kelas=7", desc: "Quiz matematika kelas 7" },
+  { label: "GAME QUIZ KELAS 8", icon: Presentation, path: "/quiz-gamez?kelas=8", desc: "Quiz matematika kelas 8" },
+  { label: "GAME QUIZ KELAS 9", icon: Presentation, path: "/quiz-gamez?kelas=9", desc: "Quiz matematika kelas 9" },
   { label: "LATIHAN MANDIRI", icon: ClipboardList, path: "/latihan-mandiri", desc: "Latihan soal per topik kelas 7, 8, dan 9" },
   { label: "KALKULATOR SCIENTIFIC", icon: Calculator, path: "/kalkulator-scientific", desc: "Hitung cepat dengan kalkulator scientific" },
   { label: "VIDEO PEMBELAJARAN", icon: PlayCircle, path: "/video-pembelajaran", desc: "Belajar melalui video interaktif" },

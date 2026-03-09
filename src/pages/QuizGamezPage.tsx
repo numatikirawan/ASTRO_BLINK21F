@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Starfield from "@/components/Starfield";
 import { Presentation, ArrowLeft } from "lucide-react";
 import PageNavigation from "@/components/PageNavigation";
@@ -10,7 +10,18 @@ type Kelas = keyof typeof quizGamezTopics;
 
 const QuizGamezPage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [selectedKelas, setSelectedKelas] = useState<Kelas | null>(null);
+
+  useEffect(() => {
+    const kelasParam = searchParams.get("kelas");
+    if (kelasParam) {
+      const kelasKey = `KELAS ${kelasParam}` as Kelas;
+      if (kelasKey in quizGamezTopics) {
+        setSelectedKelas(kelasKey);
+      }
+    }
+  }, [searchParams]);
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center gradient-space overflow-hidden">
